@@ -1,9 +1,9 @@
 # react-docify
 
-[![Test coverage](https://img.shields.io/coveralls/LingyuCoder/react-docify.svg?style=flat-square)](https://coveralls.io/r/LingyuCoder/react-docify?branch=master)
-[![Build Status](https://travis-ci.org/LingyuCoder/react-docify.png)](https://travis-ci.org/LingyuCoder/react-docify)
-[![Dependency Status](https://david-dm.org/LingyuCoder/react-docify.svg)](https://david-dm.org/LingyuCoder/react-docify)
-[![devDependency Status](https://david-dm.org/LingyuCoder/react-docify/dev-status.svg)](https://david-dm.org/LingyuCoder/react-docify#info=devDependencies)
+[![Test coverage](https://img.shields.io/coveralls/ly-tools/react-docify.svg?style=flat-square)](https://coveralls.io/r/ly-tools/react-docify?branch=master)
+[![Build Status](https://travis-ci.org/ly-tools/react-docify.png)](https://travis-ci.org/ly-tools/react-docify)
+[![Dependency Status](https://david-dm.org/ly-tools/react-docify.svg)](https://david-dm.org/ly-tools/react-docify)
+[![devDependency Status](https://david-dm.org/ly-tools/react-docify/dev-status.svg)](https://david-dm.org/ly-tools/react-docify#info=devDependencies)
 [![NPM version](http://img.shields.io/npm/v/react-docify.svg?style=flat-square)](http://npmjs.org/package/react-docify)
 [![node](https://img.shields.io/badge/node.js-%3E=_4.0-green.svg?style=flat-square)](http://nodejs.org/download/)
 [![License](http://img.shields.io/npm/l/react-docify.svg?style=flat-square)](LICENSE)
