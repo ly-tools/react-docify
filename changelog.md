@@ -1,5 +1,9 @@
 # react-docify
 
+## 1.0.1
+
+* Fix bugs when empty class and empty file
+
 ## 1.0.0
 
 * First release

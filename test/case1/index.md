@@ -8,10 +8,14 @@
 
 Display Name: Component
 
+SuperClass Name: React.Component
+
+
 ### Methods
 
 * getValue(): get value description
 * setValue(value, config): set value description
+
 
 ### Class Properties
 
@@ -21,6 +25,7 @@ Display Name: Component
 | someStaticFunc |  | √ | () => {} |
 | someStaticProps | Description of someStaticProps | √ | 'asdf' |
 | someProps | Description of someProps | × | 'aaa' |
+
 
 ### PropTypes
 

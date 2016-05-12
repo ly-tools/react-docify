@@ -7,16 +7,21 @@
 
 Display Name: Component
 
+SuperClass Name: React.Component
+
+
 ### Methods
 
 * getValue(): get value description
 * setValue(value, config): set value description
+
 
 ### Class Properties
 
 | Name | Description | Static | Value |
 | :--- | :----- | :--: | :--- |
 | someStaticProps | Description of someStaticProps | √ | 'asdf' |
+
 
 ### PropTypes
 

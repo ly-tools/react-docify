@@ -77,27 +77,34 @@ const DEFAULT_PROPERTIES_HEADERS = [{
 }];
 
 const DEFAULT_TEMPLATE = `
+
+<% if(dependencies && dependencies.length) {%>
 ## Dependencies
 <% _.forEach(dependencies || [], function(dep) { %>
-* <%= dep %><%  }); %>
-<% _.forEach(classes || [], function(cla) { %>
+* <%= dep %><%  }); %><%}%>
 
+<% _.forEach(classes || [], function(cla) { %>
 ## Class::<%= cla.name %>
 
-Display Name: <%= cla.displayName %>
+<% if(cla.displayName) {%>Display Name: <%= cla.displayName %><% } %>
 
+<% if(cla.superClass) {%>SuperClass Name: <%= cla.superClass %><% } %>
+
+<% if(cla.methods && cla.methods.length) {%>
 ### Methods
 <% _.forEach(cla.methods, function(method) { %>
 * <%= method.name %>(<%= method.params.join(', ') %>): <%= method.description %><% }); %>
-
+<%}%>
+<% if(cla.properties && cla.properties.length) {%>
 ### Class Properties
 
 <%= cla.propertiesTable %>
-
+<%}%>
+<% if(cla.propTypes && cla.propTypes.length) {%>
 ### PropTypes
 
 <%= cla.propTypesTable %>
-
+<%}%>
 <% }); %>
 `;
 
@@ -117,7 +124,7 @@ export default function(content, config = {}) {
   };
   const descObj = docer(content);
   typeof userConfig.beforeHook === 'function' && userConfig.beforeHook(descObj);
-  descObj.classes.forEach(cla => {
+  (descObj.classes || []).forEach(cla => {
     cla.methods = cla.methods.filter(method => !shouldExclude(method.name, userConfig.excludeMethods));
     cla.propertiesTable = tableify(cla.properties.filter(prop => !shouldExclude(prop.name, userConfig.excludeProperties)).map(prop => ({
       ...prop,
@@ -126,7 +133,7 @@ export default function(content, config = {}) {
     })), {
       headers: userConfig.propertiesHeaders
     });
-    cla.propTypesTable = tableify(cla.propTypes.map(propType => ({
+    cla.propTypesTable = tableify((cla.propTypes || []).map(propType => ({
       ...propType,
       defaultValue: propType.defaultValue ? `\`${propType.defaultValue}\`` : '',
       type: humanize(propType.type),
@@ -135,5 +142,9 @@ export default function(content, config = {}) {
       headers: userConfig.propTypesHeaders
     });
   });
-  return template(userConfig.template)(descObj);
+  return template(userConfig.template)({
+    dependencies: [],
+    classes: [],
+    ...descObj
+  });
 }
