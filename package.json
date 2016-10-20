@@ -1,6 +1,6 @@
 {
   "name": "react-docify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tool to generate markdown documentation from source code.",
   "main": "lib/index.js",
   "scripts": {

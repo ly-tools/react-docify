@@ -1,7 +1,7 @@
 import capitalize from 'capitalize';
 
 function getTypeStr(type) {
-  if (!type) return '';
+  if (!type || !type.name) return '';
   switch (type.name.toLowerCase()) {
     case 'instanceof':
       return `Class(${type.value.name})`;
